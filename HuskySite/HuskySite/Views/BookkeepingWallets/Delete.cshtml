@@ -1,0 +1,49 @@
+﻿@model HuskySite.Models.BookkeepingModels.Wallet
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.Wallet);
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены что хотите удалить данный кошелек?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>        
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaymentType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PatternSMS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PatternSMS.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-default">Назад</a>
+    </form>
+</div>

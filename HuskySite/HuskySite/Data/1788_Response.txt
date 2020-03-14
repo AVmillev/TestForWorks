@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 1096
+ETag: W/"448-TQlxU+HYhZFD0txzQw5sDA"
+Date: Sun, 04 Mar 2018 13:13:29 GMT
+Connection: keep-alive
+
+{"document":{"receipt":{"operationType":1,"nds10":299,"taxationType":1,"rawData":"//8AHKUDARAJhxAAAQGQkVkAD60u0B3u4AABbgACAS8DACsBEQQQADg3MTAwMDAxMDE5MDkxNTkNBBQAMDAwMDA1MzE1NTA0MTU2MiAgICD6AwwANTAzNjA0NTIwNSAgEAQEAK0PAAD0AwQABCiXWjUEBgAxBNBPmTwOBAQAEQAAABIEBAB6AAAAHgQBAAH8AwIA2gz9AwwAiiCR4+6tpOuqrqKgIwREAAYEHgCVi4WBIJGMgIoglI6QjCAwLDI3NSCCL5Egki+PII03BAIA2gz/AwMAA+gDTwQBAAC8BAEAAb4EAQAEEwQCANoMTwQCACsBGAQpACCAjiAihKiq4aggnoMiICAgICAgICAgICAgICAgIISoquGoLTY2MTAxHwQBAAEkBAwAd3d3Lm5hbG9nLnJ1BwQBAAA5BAIA2gy/BAEAAMAEAQAAwQQBAACBBpqmIAx4LQ==","userInn":"5036045205","cashTotalSum":0,"operator":"К Суюндыкова","fiscalDriveNumber":"8710000101909159","dateTime":"2018-02-28T22:07:00","modifiers":[],"receiptCode":3,"user":"АО \"Дикси ЮГ\"                Дикси-66101","totalSum":3290,"requestNumber":122,"ecashTotalSum":3290,"shiftNumber":17,"fiscalSign":3494877500,"kktRegId":"0000053155041562","stornoItems":[],"fiscalDocumentNumber":4013,"items":[{"price":3290,"nds10":0,"modifiers":[],"name":"ХЛЕБ СМАК ФОРМ 0,275 В/С Т/П Н","quantity":1,"sum":3290}]}}}

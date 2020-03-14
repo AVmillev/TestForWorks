@@ -1,0 +1,93 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.agenda {
+}
+
+    /* Dates */
+    .agenda .agenda-date {
+        width: 170px;
+    }
+
+        .agenda .agenda-date .dayofmonth {
+            width: 40px;
+            font-size: 36px;
+            line-height: 36px;
+            float: left;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .agenda .agenda-date .shortdate {
+            font-size: 0.75em;
+        }
+
+
+    /* Times */
+    .agenda .agenda-time {
+        width: 140px;
+    }
+
+
+    /* Events */
+    .agenda .agenda-events {
+    }
+
+        .agenda .agenda-events .agenda-event {
+        }
+
+.media-left div {
+    position: relative;
+    background: rgba(204, 204, 204, 1);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    /*justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+    margin-top: 8px
+}
+
+    .media-left div img {
+        max-width: 30px;
+        max-height: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+
+@media (max-width: 767px) {
+}
+

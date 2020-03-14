@@ -1,0 +1,142 @@
+﻿@model PaginatedList<HuskySite.Models.BookkeepingModels.Accounting>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.Accounting);
+}
+
+<p>
+    <a class="btn btn-default" asp-action="Create">Добавить операцию</a>
+    <a class="btn btn-default" asp-action="AddReciept">Добавить чек</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+
+            <th>
+                Дата и время операции <!--Html.DisplayNameFor(model => model.DateTimeOperation)-->
+            </th>
+            <th>
+                Цена<!--Html.DisplayNameFor(model => model.Summ)-->
+            </th>
+            <th>
+            </th>
+            <th>
+                Контрагент<!--Html.DisplayNameFor(model => model.Account)-->
+            </th>
+            <th>
+                Кошелек<!--Html.DisplayNameFor(model => model.Wallet)-->
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if (item.AccountingType == 0)
+                {
+                    <td class="table-success">
+                        <div id="img1" class="icoAcc IAbig" style="background:#@item.OperationType.Color; background: radial-gradient(#@item.OperationType.Color, #000000);">
+                            <img width="35" src="@item.OperationType.Icon" />
+                        </div>
+                        <div id="img2" class="icoAcc IAsmi">
+                            <img width="20" height="20" src="~/images/Incoming.png" />
+                        </div>
+
+                    </td>
+                }
+                else
+                {
+                    <td class="text-danger">
+                        <div id="img1" class="icoAcc IAbig" style="background:#@item.OperationType.Color;  background: radial-gradient(#@item.OperationType.Color, #000000);">
+                            <img width="35" src="@item.OperationType.Icon" />
+                        </div>
+
+                        <div id="img2" class="icoAcc IAsmi">
+                            <img idth="20" height="20" src="~/images/Expense.png" />
+                        </div>
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTimeOperation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Summ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Account.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wallet.Name)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-toggle">
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.ID"><span class="glyphicon glyphicon-pencil" /></a>
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.ID"><span class="glyphicon glyphicon-list-alt" /></a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID"><span class="glyphicon glyphicon-trash" /></a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    <span class="glyphicon glyphicon-chevron-left" />
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    <span class="glyphicon glyphicon-chevron-right" />
+</a>
+
+<style>
+    .icoAcc {
+        position: relative;
+    }
+
+    .IAbig {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        /*justify-content: center; /*Центрирование по горизонтали*/
+        align-items: center; /*Центрирование по вертикали */
+    }
+
+        .IAbig img {
+            max-width: 30px;
+            max-height: 30px;
+            display: block;
+            margin: 0 auto;
+        }
+
+    .IAsmi {
+        top: -20px;
+        left: 30px;
+        /*background: #000080;*/
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+    }
+</style>

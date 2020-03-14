@@ -1,0 +1,52 @@
+﻿@model HuskySite.Models.BookkeepingModels.Wallet
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.Wallet);
+}
+
+<h2>Изменение</h2>
+
+<h4>Кошелек</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <label asp-for="PatternSMSID" class="control-label"></label>
+                <select asp-for="PatternSMSID"  class="selectpicker" data-done-button="true" data-size="15" title="Выберите шаблон СМС ..." asp-items=@ViewBag.PatternSMSID></select>
+                <span asp-validation-for="PatternSMSID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label"></label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentType" class="control-label"></label>
+                <select asp-for="PaymentType" class="selectpicker" data-done-button="true" data-size="15" title="Выберите тип оплаты ..."
+                        asp-items="@new SelectList(Enum.GetNames(typeof(PaymentType)))"></select>
+                <span asp-validation-for="PaymentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

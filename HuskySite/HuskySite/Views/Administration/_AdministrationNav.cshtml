@@ -1,0 +1,17 @@
+﻿@using HuskySite.Views.Administration
+
+<ul class="nav nav-pills nav-stacked">
+    <li class="@AdministrationNavPages.IndexNavClass(ViewContext)">
+        <a asp-action="Index">Пользователи</a>
+        <ul class="dropdown-menu">
+            <a asp-action="CreateUser">Добавить пользователя</a>
+        </ul>
+    </li>
+    <li class="@AdministrationNavPages.RolesNavClass(ViewContext)">
+        <a asp-action="Roles" >Роли доступа</a>
+        <ul class="dropdown-menu">
+            <a asp-action="CreateRole">Добавить роль</a>
+        </ul>
+    </li>
+</ul>
+

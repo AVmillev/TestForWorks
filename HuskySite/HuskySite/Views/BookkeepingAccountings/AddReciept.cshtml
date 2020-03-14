@@ -1,0 +1,44 @@
+﻿@model HuskySite.Models.BookkeepingModels.Accounting
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.Accounting);
+}
+
+<h2>Добавление чека</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddReciept">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WalletID" class="control-label"></label>
+                <select asp-for="WalletID" class="selectpicker" data-done-button="true" data-size="15" title="Выберите кошелек ..." asp-items="ViewBag.WalletID"></select>
+            </div>      
+            <div class="form-group">
+                <label asp-for="FN" class="control-label"></label>
+                <input asp-for="FN" class="form-control" />
+                <span asp-validation-for="FN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FD" class="control-label"></label>
+                <input asp-for="FD" class="form-control" />
+                <span asp-validation-for="FD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FP" class="control-label"></label>
+                <input asp-for="FP" class="form-control" />
+                <span asp-validation-for="FP" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <input type="submit" value="Добавить чек" class="btn btn-primary" />
+                <a class="btn btn-default" asp-action="Index">Назад</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

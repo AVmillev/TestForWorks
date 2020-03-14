@@ -1,0 +1,85 @@
+﻿@model HuskySite.Models.BookkeepingModels.Accounting
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.Accounting);
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены что хотете удалить операцию?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTimeOperation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateTimeOperation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Summ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Summ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountingType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountingType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Account.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Wallet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Wallet.ID)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.OperationType.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input  type="hidden" asp-for="ID" />
+        <input class="btn btn-danger" type="submit" value="Удалить" /> 
+        <a class="btn btn-default" asp-action="Index">Назад</a>
+    </form>
+</div>

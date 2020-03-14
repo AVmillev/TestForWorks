@@ -1,0 +1,53 @@
+﻿@model HuskySite.Models.BookkeepingModels.OperationType
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Bookkeeping/_Layout.cshtml";
+    ViewData.AddActivePage(BookkeepingNavPages.OperationType);
+}
+
+<h2>Edit</h2>
+
+<h4>OperationType</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control jscolor" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Icon" class="control-label"></label>
+                <select asp-for="Icon" class="selectpicker" data-done-button="true" data-size="15" title="Выберите иконку ...">
+
+                    @foreach (KeyValuePair<string, string> val in ViewBag.ImageData)
+                    {
+                <option value="@val.Value" data-thumbnail="../../@val.Value">@val.Key</option>
+                    }
+
+                </select>
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

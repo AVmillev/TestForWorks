@@ -1,0 +1,16 @@
+﻿@using HuskySite.Views.Administration
+@model string
+@{ 
+    ViewData.AddActivePage(AdministrationNavPages.Index);
+}
+    <div class="container body-content">
+        <div asp-validation-summary="All" class="text-ыdanger"></div>
+
+        <form asp-action="CreateRoles" method="post">
+            <div class="form-group">
+                <label for="name">Новая роль</label>
+                <input name="name" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>

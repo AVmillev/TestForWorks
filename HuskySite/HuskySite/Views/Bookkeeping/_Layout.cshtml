@@ -1,0 +1,38 @@
+﻿@{ 
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <!--await Html.PartialAsync("_BookkeepingNav")-->
+        <ul class="nav nav-pills nav-stacked">
+            <li class="@BookkeepingNavPages.IndexNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="bookkeeping">Сводка</a>
+            </li>
+            <li class="@BookkeepingNavPages.WalletNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="BookkeepingWallets">Кошельки</a>
+            </li>
+            <li class="@BookkeepingNavPages.AccountingNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="BookkeepingAccountings">Операции</a>
+            </li>
+            <li class="@BookkeepingNavPages.AccountNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="BookkeepingAccounts">Контрагенты</a>
+            </li>
+            <li class="@BookkeepingNavPages.PatternSMSNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="BookkeepingPatternSMS">Шаблоны СМС</a>
+            </li>
+            <li class="@BookkeepingNavPages.OperationTypeNavClass(ViewContext)">
+                <a asp-action="Index" asp-controller="BookkeepingOperationTypes">Типы операций</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        @RenderBody()
+    </div>
+</div>
+
+
+    @section Scripts {
+        @RenderSection("Scripts", required: false)
+    }
+

@@ -1,0 +1,11 @@
+GET https://proverkacheka.nalog.ru:9999/v1/inns/*/kkts/*/fss/8710000101909159/tickets/4013?fiscalSign=3494877500&sendToEmail=no HTTP/1.1
+Authorization: Basic Kzc5MDI0NDI4OTU1OjQ1MTk2NQ==
+Device-Id: fotwRYR-Psg:APA91bHKrWBVXLLguRcqE1NhZ01m0ZAXkXEEdci_FsS1EqjObXCX56oBVAOhwZXViG7fBQREUg20t5zpjo4hsVbh1lEoforsH-V967dypgJ9HCRALn1BWH63ZkpUUqI40dil5NLALdxb
+Device-OS: Adnroid 5.1.1
+Version: 2
+ClientVersion: 1.4.4.1
+Host: proverkacheka.nalog.ru:9999
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/3.0.1
+
